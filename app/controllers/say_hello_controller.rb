@@ -8,7 +8,7 @@ class SayHelloController < ApplicationController
   end
 
   def create
-    @name = params[:name][:name]
+    @name = params[:form][:name]
     SayHello.get_instance.name = @name
     redirect_to say_hello_show_path
   end
