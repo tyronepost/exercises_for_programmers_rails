@@ -1,10 +1,10 @@
+# app/controllers/say_hello_controller.rb
 class SayHelloController < ApplicationController
   def new
   end
 
   def show
     @name = SayHello.get_instance.name
-    logger.info "Say hello #{@name} "
   end
 
   def create
