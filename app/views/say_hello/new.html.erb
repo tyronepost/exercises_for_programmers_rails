@@ -1,0 +1,8 @@
+<h1>Saying Hello</h1>
+
+<p>What is your name?</p>
+
+<%= form_for(:name, url: say_hello_path) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
