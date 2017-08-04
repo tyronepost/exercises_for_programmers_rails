@@ -1,0 +1,11 @@
+<p>What is the input string?</p>
+<%= form_for(:form) do |f| %>
+  <%= f.text_field :input %>
+  <%= f.submit %>
+<% end %>
+
+<% if(@output) %>
+  <p>
+    <%= @output %> has <%= @output.size %> characters
+  </p>
+<% end %>
