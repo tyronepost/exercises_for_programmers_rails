@@ -1,6 +1,6 @@
 <p>What is the input string?</p>
 <%= form_for(:form, remote: true) do |f| %>
-  <%= f.text_field :input %>
+  <%= f.text_field :input, onchange: "$.post('#{counting_characters_url}', { form: { input: value } }, { dataType: 'text/javascript' });" %>
   <%= f.submit %>
 <% end %>
 
