@@ -1,3 +1,4 @@
+<%# app/views/counting_characters/index.html.erb %>
 <p>What is the input string?</p>
 <%= form_for(:form, remote: true) do |f| %>
   <%= f.text_field :input, onkeyup: "postCreate(value)" %>

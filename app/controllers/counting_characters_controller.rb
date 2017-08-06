@@ -1,3 +1,5 @@
+# app/controllers/counting_characters_controller.rb
+
 require_relative '../../app/services/repository'
 
 class CountingCharactersController < ApplicationController
@@ -17,5 +19,3 @@ class CountingCharactersController < ApplicationController
     end
   end
 end
-
-

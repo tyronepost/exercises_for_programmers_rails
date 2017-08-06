@@ -1,0 +1,33 @@
+<h1>Printing Quotes</h1>
+
+<div>
+  <%= form_for(:form) do |f| %>
+    <%= f.label "What is the quote?" %>
+    <%= f.text_area :quote %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div>
+  <% if @cache.quote %>
+    <%= form_for(:form) do |f| %>
+      <%= f.label "Who said it?" %>
+      <%= f.text_area :name %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% if @cache.name %>
+    <p>
+      <%= @cache.name.to_s %> says "<%= @cache.quote.to_s %>"
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <%= form_for(:form, method: :delete) do |f| %>
+    <%= f.submit 'Delete' %>
+  <% end %>
+</div>
