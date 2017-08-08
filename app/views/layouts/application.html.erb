@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ExercisesForProgrammersRails</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>ExercisesForProgrammersRails</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h1>Exercises for Programmers (In Rails)</h1>
+  </div>
+</div>
+
+<%= yield %>
+
+<% unless current_page?(root_path) %>
+  <%= link_to 'Back', root_path %>
+<% end %>
+
+</body>
 </html>
