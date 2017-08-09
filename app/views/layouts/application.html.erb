@@ -8,18 +8,22 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body class="container">
-<div class="row">
-  <div class="col-md-12">
-    <h1>Exercises for Programmers (In Rails)</h1>
+<body class="container-fluid">
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <div class="navbar-brand">
+      Exercises for Programmers (In Rails)
+    </div>
   </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+
+  <% unless current_page?(root_path) %>
+    <%= link_to 'Back', root_path %>
+  <% end %>
 </div>
-
-<%= yield %>
-
-<% unless current_page?(root_path) %>
-  <%= link_to 'Back', root_path %>
-<% end %>
 
 </body>
 </html>
