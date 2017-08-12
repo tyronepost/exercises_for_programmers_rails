@@ -5,8 +5,16 @@ class PrintingQuotesController < ApplicationController
   end
 
   def create
-    @cache.quote = params[:form][:quote] if params[:form][:quote]
-    @cache.name = params[:form][:name] if params[:form][:name]
+    if params[:form][:quote].length > 1
+      @cache.quote = params[:form][:quote]
+    else
+      flash[:quote] = "Quote field not populated"
+    end
+    if params[:form][:name].length > 1
+      @cache.name = params[:form][:name]
+    else
+      flash[:name] = "Name field not populated"
+    end
     redirect_to printing_quotes_url
   end
 
