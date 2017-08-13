@@ -1,16 +1,11 @@
 <h1>Printing Quotes</h1>
 <div>
-  <% flash.each do |message_type, message| %>
-    <div class="alert"><span class="label label-danger"><%= message %></span></div>
-  <% end %>
-</div>
-<div>
   <%= form_for(:form) do |f| %>
-    <div class="form-group">
+    <div class="form-group <%= "has-error" unless @cache.quote_valid? %>">
       <%= f.label "What is the quote?" %>
       <%= f.text_area :quote, class: "form-control" %>
     </div>
-    <div class="form-group">
+    <div class="form-group <%= "has-error" unless @cache.name_valid? %>">
       <%= f.label "Who said it?" %>
       <%= f.text_field :name, class: "form-control" %>
     </div>
