@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get 'printing_quotes' => 'printing_quotes#index'
   post 'printing_quotes' => 'printing_quotes#create'
   delete 'printing_quotes' => 'printing_quotes#destroy'
+
+  get 'printing_quotes_v2' => 'printing_quotes_v2#index'
+  post 'printing_quotes_v2' => 'printing_quotes_v2#create'
 end

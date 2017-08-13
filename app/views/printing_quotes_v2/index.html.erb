@@ -1,0 +1,25 @@
+<div>
+
+  <%= form_for(:quote) do |f| %>
+    <div class="form-group">
+      <%= f.label "What is the quote?" %>
+      <%= f.text_field :quote %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Who said it?" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="btn">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<% if @quote %>
+  <div>
+    <p>
+      <%= @quote.name %> says "<%= @quote.quote %>"
+    </p>
+  </div>
+<% end %>
+
